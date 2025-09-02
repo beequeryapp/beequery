@@ -1,0 +1,35 @@
+---
+description: Performance optimization guidelines for desktop and web applications
+globs: ["**/*.ts", "**/*.tsx", "**/*.rs"]
+alwaysApply: true
+---
+
+# Performance Considerations
+
+## Desktop App Performance
+
+-   Implement virtual scrolling for large result sets
+-   Use React.memo and useMemo for expensive computations
+-   Lazy load components and features
+-   Optimize bundle size with dynamic imports
+
+## Database Operations
+
+-   Implement query result streaming for large datasets
+-   Use connection pooling for better performance
+-   Cache frequently accessed metadata
+-   Implement query optimization suggestions
+
+## React Optimization
+
+-   Use React.memo for components that re-render frequently
+-   Implement useMemo and useCallback for expensive operations
+-   Avoid creating objects/functions in render
+-   Use React DevTools Profiler to identify bottlenecks
+
+## Bundle Optimization
+
+-   Use dynamic imports for code splitting
+-   Implement lazy loading for routes and components
+-   Optimize images and assets
+-   Remove unused dependencies and code

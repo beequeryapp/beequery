@@ -1,0 +1,34 @@
+---
+description: Testing guidelines and strategies for both desktop and web applications
+globs: ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx", "**/tests/**/*"]
+alwaysApply: true
+---
+
+# Testing Strategy
+
+## Unit Tests
+
+-   Test utility functions and hooks
+-   Mock Tauri APIs in tests
+-   Use React Testing Library for component tests
+-   Aim for high test coverage on critical paths
+
+## Integration Tests
+
+-   Test database connection flows
+-   Verify query execution and result handling
+-   Test error scenarios and edge cases
+
+## Testing Tools
+
+-   **React Testing Library**: For component testing
+-   **Jest/Vitest**: Test runner
+-   **MSW**: Mock Service Worker for API mocking
+-   **Playwright**: End-to-end testing (if needed)
+
+## Best Practices
+
+-   Write tests before implementing features (TDD)
+-   Test user interactions, not implementation details
+-   Mock external dependencies appropriately
+-   Use descriptive test names that explain the scenario

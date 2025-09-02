@@ -1,0 +1,35 @@
+---
+description: Error handling patterns for frontend and backend
+globs: ["**/*.ts", "**/*.tsx", "**/*.rs"]
+alwaysApply: true
+---
+
+# Error Handling
+
+## Frontend Error Handling
+
+-   Use error boundaries for component-level errors
+-   Implement global error handling for unhandled promises
+-   Show user-friendly error messages
+-   Log errors for debugging (non-sensitive data only)
+
+## Database Error Handling
+
+-   Catch and handle database connection errors
+-   Provide meaningful error messages for SQL syntax errors
+-   Implement retry logic for transient failures
+-   Handle timeout scenarios gracefully
+
+## Rust Error Handling
+
+-   Use proper error handling with `Result<T, E>`
+-   Create custom error types for domain-specific errors
+-   Implement proper error propagation
+-   Log errors appropriately without exposing sensitive data
+
+## User Experience
+
+-   Always provide actionable error messages
+-   Implement loading states during error recovery
+-   Allow users to retry failed operations
+-   Gracefully degrade functionality when possible

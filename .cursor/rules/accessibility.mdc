@@ -1,0 +1,37 @@
+---
+description: Accessibility guidelines for UI components and database features
+globs: ["**/components/**/*.tsx", "**/app/**/*.tsx", "**/pages/**/*.tsx"]
+alwaysApply: true
+---
+
+# Accessibility Guidelines
+
+## UI Accessibility
+
+-   Use semantic HTML elements
+-   Implement proper ARIA labels
+-   Ensure keyboard navigation works
+-   Test with screen readers
+-   Maintain good color contrast ratios
+
+## Database Accessibility
+
+-   Support keyboard shortcuts for power users
+-   Provide alternative text for visual elements
+-   Implement proper focus management
+-   Support high contrast themes
+
+## Component Requirements
+
+-   All interactive elements must be keyboard accessible
+-   Use proper heading hierarchy (h1, h2, h3, etc.)
+-   Implement skip links for main content
+-   Ensure form labels are properly associated
+-   Use descriptive button and link text
+
+## Testing
+
+-   Test with keyboard-only navigation
+-   Verify screen reader compatibility
+-   Check color contrast ratios
+-   Test with browser zoom at 200%

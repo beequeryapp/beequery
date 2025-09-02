@@ -13,7 +13,9 @@
         "build:website": "cd apps/website && bun run build",
         "dev": "concurrently \"bun run dev:desktop\" \"bun run dev:website\"",
         "build": "bun run build:desktop && bun run build:website",
-        "install:all": "bun install && cd apps/desktop && bun install && cd ../website && bun install"
+        "install:all": "bun install && cd apps/desktop && bun install && cd ../website && bun install",
+        "ui:add:web": "cd apps/website && bun run ui:add",
+        "ui:add:desk": "cd apps/desktop && bun run ui:add"
     },
     "devDependencies": {
         "concurrently": "^9.0.2"

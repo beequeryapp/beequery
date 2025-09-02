@@ -1,0 +1,28 @@
+---
+description: shadcn/ui component guidelines and usage patterns
+globs: ["**/components/**/*.tsx", "**/ui/**/*.tsx"]
+alwaysApply: true
+---
+
+# shadcn/ui Guidelines
+
+## Component Usage
+
+-   Always use shadcn/ui components when available
+-   Customize components through className props and CSS variables
+-   Follow shadcn/ui naming conventions
+-   Use the `cn()` utility for conditional classes
+
+## State Management
+
+-   Use React's built-in state management (useState, useReducer)
+-   Consider Zustand for complex global state
+-   Use React Query/TanStack Query for server state
+-   Prefer local state over global state when possible
+
+## Best Practices
+
+-   Import shadcn/ui components before custom components
+-   Use TypeScript interfaces for all component props
+-   Implement proper accessibility attributes
+-   Follow consistent naming patterns for component files

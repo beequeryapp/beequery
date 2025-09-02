@@ -1,0 +1,51 @@
+---
+description: Monorepo development workflow and commands
+globs: ["package.json", "**/package.json", "bun.lock", "**/bun.lock"]
+alwaysApply: true
+---
+
+# Monorepo Development Workflow
+
+## Package Manager
+
+-   **Bun**: Primary package manager for all workspaces
+-   Use `bun install` for dependency management
+-   Leverage Bun's workspace features
+
+## Available Commands
+
+```bash
+# Development
+bun run dev              # Run both apps
+bun run dev:desktop      # Desktop app only
+bun run dev:website      # Website only
+
+# Building
+bun run build            # Build both apps
+bun run build:desktop    # Desktop app only
+bun run build:website    # Website only
+
+# Tauri specific
+bun run tauri dev        # Tauri development mode
+bun run tauri build      # Build desktop app
+
+# Installation
+bun run install:all      # Install all workspace dependencies
+
+# UI Components
+bun run ui:add:web <component-name>     # Add a new component to the website
+bun run ui:add:desk <component-name>    # Add a new component to the desktop app
+```
+
+## Git Workflow
+
+-   Use conventional commits (feat:, fix:, docs:, etc.)
+-   Create feature branches from main
+-   Use descriptive commit messages
+-   Keep commits atomic and focused
+
+## Workspace Management
+
+-   Each app has its own package.json and dependencies
+-   Shared dependencies should be managed at the root level
+-   Use workspace: protocol for internal package references

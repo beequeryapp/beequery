@@ -1,0 +1,37 @@
+---
+description: Tauri-specific development guidelines and patterns
+globs: ["apps/desktop/**/*.rs", "apps/desktop/**/*.tsx", "apps/desktop/**/*.ts"]
+alwaysApply: true
+---
+
+# Tauri-Specific Guidelines
+
+## Rust Commands
+
+-   Keep Rust commands focused and single-purpose
+-   Use proper error handling with `Result<T, E>`
+-   Implement async operations for database interactions
+-   Use Tauri's state management for shared resources
+
+## Frontend-Backend Communication
+
+-   Use Tauri's `invoke()` for calling Rust commands
+-   Implement proper loading states for async operations
+-   Handle errors gracefully with user-friendly messages
+-   Use Tauri events for real-time updates
+
+## Security
+
+-   Never log sensitive database credentials
+-   Use parameterized queries to prevent SQL injection
+-   Implement connection timeout and retry logic
+-   Encrypt stored connection configurations
+-   Use Tauri's secure storage APIs
+-   Validate all user inputs
+
+## Performance
+
+-   Implement virtual scrolling for large result sets
+-   Use React.memo and useMemo for expensive computations
+-   Lazy load components and features
+-   Optimize bundle size with dynamic imports

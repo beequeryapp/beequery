@@ -1,0 +1,51 @@
+---
+description: Code style and formatting standards for BeeQuery
+globs: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+alwaysApply: true
+---
+
+# Code Style & Standards
+
+## General Guidelines
+
+-   Use TypeScript for all new code
+-   Follow functional programming patterns where possible
+-   Prefer composition over inheritance
+-   Use descriptive variable and function names
+-   Keep functions small and focused on single responsibility
+
+## File Naming Conventions
+
+-   **Components**: PascalCase (e.g., `DatabaseConnection.tsx`)
+-   **Utilities**: Hyphen-separated (e.g., `format-query.ts`)
+-   **Types**: PascalCase interfaces/types (e.g., `DatabaseConfig.ts`)
+-   **Constants**: UPPER_SNAKE_CASE (e.g., `DATABASE_TYPES.ts`)
+
+## Import Organization
+
+```typescript
+// 1. React and external libraries
+import React from "react";
+import { useState, useEffect } from "react";
+import { invoke } from "@tauri-apps/api";
+
+// 2. Internal utilities and hooks
+import { cn } from "@/lib/utils";
+import { useDatabase } from "@/hooks/useDatabase";
+
+// 3. Components (shadcn/ui first, then custom)
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { DatabaseConnection } from "@/components/DatabaseConnection";
+
+// 4. Types
+import type { Database, QueryResult } from "@/types/database";
+```
+
+## Component Patterns
+
+-   Use functional components with hooks
+-   Prefer named exports over default exports
+-   Use TypeScript interfaces for props
+-   Implement proper error boundaries
+-   Use React.memo() for performance-critical components

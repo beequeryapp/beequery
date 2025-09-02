@@ -1,0 +1,35 @@
+---
+description: Security best practices for database management and user data protection
+globs: ["**/*.ts", "**/*.tsx", "**/*.rs"]
+alwaysApply: true
+---
+
+# Security Best Practices
+
+## Data Protection
+
+-   Never store passwords in plain text
+-   Use Tauri's secure storage APIs
+-   Implement proper session management
+-   Validate all user inputs
+
+## Network Security
+
+-   Use TLS for database connections when available
+-   Implement certificate validation
+-   Handle connection timeouts properly
+-   Log security-relevant events (without sensitive data)
+
+## Database Security
+
+-   Never log sensitive database credentials
+-   Use parameterized queries to prevent SQL injection
+-   Implement connection timeout and retry logic
+-   Encrypt stored connection configurations
+
+## Code Security
+
+-   Sanitize all user inputs
+-   Use environment variables for sensitive configuration
+-   Implement proper authentication and authorization
+-   Regular security audits of dependencies

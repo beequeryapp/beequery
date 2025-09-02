@@ -1,0 +1,35 @@
+---
+description: Next.js website development guidelines and patterns
+globs: ["apps/website/**/*.ts", "apps/website/**/*.tsx"]
+alwaysApply: true
+---
+
+# Next.js Website Guidelines
+
+## Framework Features
+
+-   **Next.js 15**: React framework with App Router
+-   **Turbopack**: Fast bundler for development
+-   Use App Router for all new pages and layouts
+-   Implement proper SEO with metadata API
+
+## Development Patterns
+
+-   Use Server Components by default
+-   Add 'use client' only when necessary
+-   Implement proper error boundaries
+-   Use Next.js Image component for optimized images
+
+## Performance
+
+-   Implement code splitting with dynamic imports
+-   Use Next.js built-in optimizations
+-   Optimize images and fonts
+-   Implement proper caching strategies
+
+## Routing
+
+-   Use file-based routing with App Router
+-   Implement proper loading and error states
+-   Use parallel and intercepting routes when appropriate
+-   Follow Next.js naming conventions for special files
