@@ -1,0 +1,263 @@
+# BeeQuery Cursor Rules
+
+## Project Overview
+
+BeeQuery is an open-source database management tool and TablePlus alternative built with modern web
+technologies. It provides a beautiful, intuitive interface for connecting to and managing all major
+database providers including PostgreSQL, MySQL, SQLite, MongoDB, Redis, and more. The project
+consists of a cross-platform desktop application built with Tauri and a companion website built with
+Next.js.
+
+## Tech Stack & Architecture
+
+### Monorepo Structure
+
+-   **apps/desktop/**: Tauri-based desktop application (React + TypeScript + Vite)
+-   **apps/website/**: Next.js website for landing page, documentation, and web features
+-   **Package Manager**: Bun (primary package manager for all workspaces)
+
+### Frontend Technologies
+
+-   **React 19**: Latest React with concurrent features
+-   **TypeScript**: Strict type checking enabled
+-   **Tailwind CSS 4**: Utility-first CSS framework
+-   **shadcn/ui**: Component library for consistent UI
+-   **Lucide React**: Icon library
+-   **Radix UI**: Headless UI primitives
+
+### Desktop Application
+
+-   **Tauri 2**: Rust-based desktop framework
+-   **Vite**: Build tool and dev server
+-   **React Router**: Client-side routing (if needed)
+
+### Website
+
+-   **Next.js 15**: React framework with App Router
+-   **Turbopack**: Fast bundler for development
+
+## Code Style & Standards
+
+### General Guidelines
+
+-   Use TypeScript for all new code
+-   Follow functional programming patterns where possible
+-   Prefer composition over inheritance
+-   Use descriptive variable and function names
+-   Keep functions small and focused on single responsibility
+
+### File Naming Conventions
+
+-   **Components**: PascalCase (e.g., `DatabaseConnection.tsx`)
+-   **Utilities**: Hyphen-separated (e.g., `format-query.ts`)
+-   **Types**: PascalCase interfaces/types (e.g., `DatabaseConfig.ts`)
+-   **Constants**: UPPER_SNAKE_CASE (e.g., `DATABASE_TYPES.ts`)
+
+### Import Organization
+
+```typescript
+// 1. React and external libraries
+import React from "react";
+import { useState, useEffect } from "react";
+import { invoke } from "@tauri-apps/api";
+
+// 2. Internal utilities and hooks
+import { cn } from "@/lib/utils";
+import { useDatabase } from "@/hooks/useDatabase";
+
+// 3. Components (shadcn/ui first, then custom)
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { DatabaseConnection } from "@/components/DatabaseConnection";
+
+// 4. Types
+import type { Database, QueryResult } from "@/types/database";
+```
+
+### Component Patterns
+
+-   Use functional components with hooks
+-   Prefer named exports over default exports
+-   Use TypeScript interfaces for props
+-   Implement proper error boundaries
+-   Use React.memo() for performance-critical components
+
+### shadcn/ui Guidelines
+
+-   Always use shadcn/ui components when available
+-   Customize components through className props and CSS variables
+-   Follow shadcn/ui naming conventions
+-   Use the `cn()` utility for conditional classes
+
+### State Management
+
+-   Use React's built-in state management (useState, useReducer)
+-   Consider Zustand for complex global state
+-   Use React Query/TanStack Query for server state
+-   Prefer local state over global state when possible
+
+## Database Integration
+
+### Connection Management
+
+-   Support for multiple concurrent database connections
+-   Connection pooling and lifecycle management
+-   Secure credential storage using Tauri's secure storage
+-   Connection testing and health monitoring
+
+### Query Execution
+
+-   Syntax highlighting for SQL queries
+-   Query result pagination and virtualization
+-   Export results in multiple formats (CSV, JSON, Excel)
+-   Query history and favorites
+
+### Security
+
+-   Never log sensitive database credentials
+-   Use parameterized queries to prevent SQL injection
+-   Implement connection timeout and retry logic
+-   Encrypt stored connection configurations
+
+## Tauri-Specific Guidelines
+
+### Rust Commands
+
+-   Keep Rust commands focused and single-purpose
+-   Use proper error handling with `Result<T, E>`
+-   Implement async operations for database interactions
+-   Use Tauri's state management for shared resources
+
+### Frontend-Backend Communication
+
+-   Use Tauri's `invoke()` for calling Rust commands
+-   Implement proper loading states for async operations
+-   Handle errors gracefully with user-friendly messages
+-   Use Tauri events for real-time updates
+
+## Performance Considerations
+
+### Desktop App
+
+-   Implement virtual scrolling for large result sets
+-   Use React.memo and useMemo for expensive computations
+-   Lazy load components and features
+-   Optimize bundle size with dynamic imports
+
+### Database Operations
+
+-   Implement query result streaming for large datasets
+-   Use connection pooling for better performance
+-   Cache frequently accessed metadata
+-   Implement query optimization suggestions
+
+## Testing Strategy
+
+### Unit Tests
+
+-   Test utility functions and hooks
+-   Mock Tauri APIs in tests
+-   Use React Testing Library for component tests
+-   Aim for high test coverage on critical paths
+
+### Integration Tests
+
+-   Test database connection flows
+-   Verify query execution and result handling
+-   Test error scenarios and edge cases
+
+## Development Workflow
+
+### Monorepo Commands
+
+```bash
+# Development
+bun run dev              # Run both apps
+bun run dev:desktop      # Desktop app only
+bun run dev:website      # Website only
+
+# Building
+bun run build            # Build both apps
+bun run build:desktop    # Desktop app only
+bun run build:website    # Website only
+
+# Tauri specific
+bun run tauri dev        # Tauri development mode
+bun run tauri build      # Build desktop app
+```
+
+### Git Workflow
+
+-   Use conventional commits (feat:, fix:, docs:, etc.)
+-   Create feature branches from main
+-   Use descriptive commit messages
+-   Keep commits atomic and focused
+
+## Error Handling
+
+### Frontend Error Handling
+
+-   Use error boundaries for component-level errors
+-   Implement global error handling for unhandled promises
+-   Show user-friendly error messages
+-   Log errors for debugging (non-sensitive data only)
+
+### Database Error Handling
+
+-   Catch and handle database connection errors
+-   Provide meaningful error messages for SQL syntax errors
+-   Implement retry logic for transient failures
+-   Handle timeout scenarios gracefully
+
+## Accessibility
+
+### UI Accessibility
+
+-   Use semantic HTML elements
+-   Implement proper ARIA labels
+-   Ensure keyboard navigation works
+-   Test with screen readers
+-   Maintain good color contrast ratios
+
+### Database Accessibility
+
+-   Support keyboard shortcuts for power users
+-   Provide alternative text for visual elements
+-   Implement proper focus management
+-   Support high contrast themes
+
+## Documentation
+
+### Code Documentation
+
+-   Use JSDoc for complex functions
+-   Document component props with TypeScript interfaces
+-   Include usage examples for custom hooks
+-   Document Rust command APIs
+
+### User Documentation
+
+-   Maintain up-to-date README files
+-   Document database connection procedures
+-   Provide troubleshooting guides
+-   Include keyboard shortcut references
+
+## Security Best Practices
+
+### Data Protection
+
+-   Never store passwords in plain text
+-   Use Tauri's secure storage APIs
+-   Implement proper session management
+-   Validate all user inputs
+
+### Network Security
+
+-   Use TLS for database connections when available
+-   Implement certificate validation
+-   Handle connection timeouts properly
+-   Log security-relevant events (without sensitive data)
+
+Remember: BeeQuery aims to be the go-to open-source alternative to TablePlus, focusing on ease of
+use, performance, and comprehensive database support. Every decision should prioritize user
+experience while maintaining robust functionality.
