@@ -1,7 +1,65 @@
-# Tauri + React + Typescript
+# BeeQuery Monorepo
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+A monorepo containing the BeeQuery desktop application and website.
 
-## Recommended IDE Setup
+## Structure
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+-   `apps/desktop/` - Tauri desktop application
+-   `apps/website/` - Next.js website
+
+## Getting Started
+
+### Install Dependencies
+
+```bash
+bun run install:all
+```
+
+### Development
+
+Run both applications:
+
+```bash
+bun run dev
+```
+
+Run desktop app only:
+
+```bash
+bun run dev:desktop
+```
+
+Run website only:
+
+```bash
+bun run dev:website
+```
+
+### Building
+
+Build both applications:
+
+```bash
+bun run build
+```
+
+Build desktop app only:
+
+```bash
+bun run build:desktop
+```
+
+Build website only:
+
+```bash
+bun run build:website
+```
+
+### Tauri Commands
+
+Run Tauri-specific commands:
+
+```bash
+bun run tauri dev
+bun run tauri build
+```
