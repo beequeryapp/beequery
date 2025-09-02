@@ -1,0 +1,95 @@
+---
+description: Context7 MCP server usage guidelines for documentation and learning
+globs: ["**/*.ts", "**/*.tsx", "**/*.rs", "**/*.md"]
+alwaysApply: true
+---
+
+# Context7 Documentation Guidelines
+
+## When to Use Context7
+
+-   When implementing new features with unfamiliar APIs or libraries
+-   For finding up-to-date code examples and best practices
+-   When debugging complex integration issues
+-   For learning modern patterns in React, Tauri, Next.js, or database libraries
+
+## Key Library IDs for BeeQuery
+
+### Frontend Technologies
+
+-   **React**: `/reactjs/react.dev` - Official React documentation with hooks and patterns
+-   **Next.js**: `/vercel/next.js` - Latest Next.js features and App Router patterns
+-   **Tailwind CSS**: Query for utility-first CSS patterns and responsive design
+-   **TypeScript**: Reference for type definitions and advanced TypeScript patterns
+
+### Desktop Application
+
+-   **Tauri**: `/tauri-apps/tauri` - Core Tauri framework and command patterns
+-   **Tauri Plugins**: `/tauri-apps/plugins-workspace` - Official plugin implementations
+-   **Tauri SQL**: `/tauri-apps/tauri-plugin-sql` - Database integration patterns
+
+### UI Components
+
+-   **Radix UI**: Query for headless component patterns and accessibility
+-   **Lucide React**: Icon usage patterns and best practices
+
+## Context7 Query Patterns
+
+### Effective Topic Filtering
+
+```
+Good: "database connection pooling"
+Good: "React hooks error handling"
+Good: "Tauri command security"
+Bad: "database" (too broad)
+Bad: "hooks" (too generic)
+```
+
+### Specific Use Cases
+
+-   **New Feature Implementation**: Query with specific feature name + library
+-   **Error Resolution**: Include error context and relevant technology
+-   **Performance Optimization**: Query with performance + specific bottleneck
+-   **Security Patterns**: Query with security + specific vulnerability type
+
+## Integration Workflow
+
+1. **Identify Knowledge Gap**: What specific technology or pattern do you need?
+2. **Choose Library ID**: Select the most authoritative source from Context7
+3. **Craft Specific Query**: Use targeted topics rather than broad searches
+4. **Apply Examples**: Adapt Context7 code snippets to BeeQuery patterns
+5. **Document Learnings**: Update relevant cursor rules with new insights
+
+## Best Practices
+
+-   **Verify Recency**: Check Context7 results for version compatibility
+-   **Cross-Reference**: Compare multiple sources when available
+-   **Adapt Don't Copy**: Modify examples to fit BeeQuery's architecture
+-   **Security First**: Always validate security recommendations from Context7
+-   **Test Thoroughly**: Context7 examples may need adaptation for your specific use case
+
+## Common Queries for BeeQuery
+
+### Database Integration
+
+-   Topic: "SQL connection security tauri"
+-   Topic: "database connection pooling rust"
+-   Topic: "parameterized queries prevention"
+
+### UI Development
+
+-   Topic: "React error boundaries"
+-   Topic: "shadcn component customization"
+-   Topic: "accessibility ARIA patterns"
+
+### Performance
+
+-   Topic: "React virtualization large datasets"
+-   Topic: "Tauri memory optimization"
+-   Topic: "Next.js bundle optimization"
+
+### Architecture
+
+-   Topic: "monorepo workspace configuration"
+-   Topic: "Tauri frontend backend communication"
+-   Topic: "React state management patterns"

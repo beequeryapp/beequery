@@ -42,3 +42,10 @@ alwaysApply: true
 -   Provide meaningful error messages for SQL syntax errors
 -   Implement retry logic for transient failures
 -   Handle timeout scenarios gracefully
+
+## Documentation & Learning
+
+-   Use Context7 MCP server for database driver documentation and examples
+-   Query Context7 with `/tauri-apps/tauri-plugin-sql` for Tauri SQL plugin patterns
+-   Reference Context7 for connection pooling and transaction management examples
+-   Leverage Context7's security best practices for database credential handling

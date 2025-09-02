@@ -49,3 +49,10 @@ import type { Database, QueryResult } from "@/types/database";
 -   Use TypeScript interfaces for props
 -   Implement proper error boundaries
 -   Use React.memo() for performance-critical components
+
+## Documentation & References
+
+-   Use Context7 MCP server for React and TypeScript documentation
+-   Query Context7 with `/reactjs/react.dev` for React best practices and patterns
+-   For TypeScript guidance, reference Context7 with specific TypeScript topics
+-   Leverage Context7's code examples for modern React patterns and hooks

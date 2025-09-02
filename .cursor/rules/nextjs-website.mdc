@@ -33,3 +33,10 @@ alwaysApply: true
 -   Implement proper loading and error states
 -   Use parallel and intercepting routes when appropriate
 -   Follow Next.js naming conventions for special files
+
+## Documentation & Learning
+
+-   Use Context7 MCP server for Next.js documentation and best practices
+-   Query Context7 with `/vercel/next.js` for latest Next.js patterns and features
+-   Reference Context7 for App Router examples and migration guides
+-   Leverage Context7's code snippets for server components and API routes

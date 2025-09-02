@@ -26,3 +26,10 @@ alwaysApply: true
 -   Use TypeScript interfaces for all component props
 -   Implement proper accessibility attributes
 -   Follow consistent naming patterns for component files
+
+## Documentation & References
+
+-   Use Context7 MCP server for shadcn/ui component documentation and examples
+-   Query Context7 for Radix UI primitives documentation when customizing components
+-   Reference Context7 for Tailwind CSS utility patterns and best practices
+-   Leverage Context7's examples for accessible component implementations

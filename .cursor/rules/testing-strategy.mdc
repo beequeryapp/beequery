@@ -32,3 +32,10 @@ alwaysApply: true
 -   Test user interactions, not implementation details
 -   Mock external dependencies appropriately
 -   Use descriptive test names that explain the scenario
+
+## Documentation & Learning
+
+-   Use Context7 MCP server for testing framework documentation and patterns
+-   Query Context7 with React Testing Library for component testing best practices
+-   Reference Context7 for Tauri testing patterns and mock strategies
+-   Leverage Context7's examples for integration testing with databases

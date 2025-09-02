@@ -35,3 +35,10 @@ alwaysApply: true
 -   Use React.memo and useMemo for expensive computations
 -   Lazy load components and features
 -   Optimize bundle size with dynamic imports
+
+## Documentation & Learning
+
+-   Use Context7 MCP server for up-to-date Tauri documentation and examples
+-   When implementing new Tauri features, query Context7 with: `/tauri-apps/tauri` library ID
+-   For plugin development, reference Context7 docs with specific plugin topics
+-   Leverage Context7's code snippets for Tauri command patterns and best practices
