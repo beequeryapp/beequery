@@ -8,30 +8,30 @@ alwaysApply: true
 
 ## When to Use Context7
 
--   When implementing new features with unfamiliar APIs or libraries
--   For finding up-to-date code examples and best practices
--   When debugging complex integration issues
--   For learning modern patterns in React, Tauri, Next.js, or database libraries
+- When implementing new features with unfamiliar APIs or libraries
+- For finding up-to-date code examples and best practices
+- When debugging complex integration issues
+- For learning modern patterns in React, Wails, Next.js, or database libraries
 
 ## Key Library IDs for BeeQuery
 
 ### Frontend Technologies
 
--   **React**: `/reactjs/react.dev` - Official React documentation with hooks and patterns
--   **Next.js**: `/vercel/next.js` - Latest Next.js features and App Router patterns
--   **Tailwind CSS**: Query for utility-first CSS patterns and responsive design
--   **TypeScript**: Reference for type definitions and advanced TypeScript patterns
+- **React**: `/reactjs/react.dev` - Official React documentation with hooks and patterns
+- **Next.js**: `/vercel/next.js` - Latest Next.js features and App Router patterns
+- **Tailwind CSS**: Query for utility-first CSS patterns and responsive design
+- **TypeScript**: Reference for type definitions and advanced TypeScript patterns
 
 ### Desktop Application
 
--   **Tauri**: `/tauri-apps/tauri` - Core Tauri framework and command patterns
--   **Tauri Plugins**: `/tauri-apps/plugins-workspace` - Official plugin implementations
--   **Tauri SQL**: `/tauri-apps/tauri-plugin-sql` - Database integration patterns
+- **Wails**: Reference official Wails documentation for Go backend patterns
+- **Go Database**: Query for Go database/sql package patterns and connection pooling
+- **Wails Runtime**: Reference Wails runtime features for desktop integration
 
 ### UI Components
 
--   **Radix UI**: Query for headless component patterns and accessibility
--   **Lucide React**: Icon usage patterns and best practices
+- **Radix UI**: Query for headless component patterns and accessibility
+- **Lucide React**: Icon usage patterns and best practices
 
 ## Context7 Query Patterns
 
@@ -40,17 +40,17 @@ alwaysApply: true
 ```
 Good: "database connection pooling"
 Good: "React hooks error handling"
-Good: "Tauri command security"
+Good: "Wails Go backend security"
 Bad: "database" (too broad)
 Bad: "hooks" (too generic)
 ```
 
 ### Specific Use Cases
 
--   **New Feature Implementation**: Query with specific feature name + library
--   **Error Resolution**: Include error context and relevant technology
--   **Performance Optimization**: Query with performance + specific bottleneck
--   **Security Patterns**: Query with security + specific vulnerability type
+- **New Feature Implementation**: Query with specific feature name + library
+- **Error Resolution**: Include error context and relevant technology
+- **Performance Optimization**: Query with performance + specific bottleneck
+- **Security Patterns**: Query with security + specific vulnerability type
 
 ## Integration Workflow
 
@@ -62,34 +62,34 @@ Bad: "hooks" (too generic)
 
 ## Best Practices
 
--   **Verify Recency**: Check Context7 results for version compatibility
--   **Cross-Reference**: Compare multiple sources when available
--   **Adapt Don't Copy**: Modify examples to fit BeeQuery's architecture
--   **Security First**: Always validate security recommendations from Context7
--   **Test Thoroughly**: Context7 examples may need adaptation for your specific use case
+- **Verify Recency**: Check Context7 results for version compatibility
+- **Cross-Reference**: Compare multiple sources when available
+- **Adapt Don't Copy**: Modify examples to fit BeeQuery's architecture
+- **Security First**: Always validate security recommendations from Context7
+- **Test Thoroughly**: Context7 examples may need adaptation for your specific use case
 
 ## Common Queries for BeeQuery
 
 ### Database Integration
 
--   Topic: "SQL connection security tauri"
--   Topic: "database connection pooling rust"
--   Topic: "parameterized queries prevention"
+- Topic: "SQL connection security golang"
+- Topic: "database connection pooling go"
+- Topic: "parameterized queries prevention"
 
 ### UI Development
 
--   Topic: "React error boundaries"
--   Topic: "shadcn component customization"
--   Topic: "accessibility ARIA patterns"
+- Topic: "React error boundaries"
+- Topic: "shadcn component customization"
+- Topic: "accessibility ARIA patterns"
 
 ### Performance
 
--   Topic: "React virtualization large datasets"
--   Topic: "Tauri memory optimization"
--   Topic: "Next.js bundle optimization"
+- Topic: "React virtualization large datasets"
+- Topic: "Wails memory optimization"
+- Topic: "Next.js bundle optimization"
 
 ### Architecture
 
--   Topic: "monorepo workspace configuration"
--   Topic: "Tauri frontend backend communication"
--   Topic: "React state management patterns"
+- Topic: "monorepo workspace configuration"
+- Topic: "Wails frontend backend communication"
+- Topic: "React state management patterns"

@@ -4,8 +4,8 @@ A monorepo containing the BeeQuery desktop application and website.
 
 ## Structure
 
--   `apps/desktop/` - Tauri desktop application
--   `apps/website/` - Next.js website
+- `apps/desktop/` - Wails desktop application (Go + React)
+- `apps/website/` - Next.js website
 
 ## Getting Started
 
@@ -55,11 +55,17 @@ Build website only:
 bun run build:website
 ```
 
-### Tauri Commands
+### Wails Commands
 
-Run Tauri-specific commands:
+Run Wails-specific commands for the desktop app:
 
 ```bash
-bun run tauri dev
-bun run tauri build
+# Development mode (from apps/desktop/ directory)
+wails dev
+
+# Build desktop app (from apps/desktop/ directory)
+wails build
+
+# Generate Go bindings (from apps/desktop/ directory)
+wails generate module
 ```

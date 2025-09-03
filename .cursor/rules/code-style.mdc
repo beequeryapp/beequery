@@ -8,18 +8,18 @@ alwaysApply: true
 
 ## General Guidelines
 
--   Use TypeScript for all new code
--   Follow functional programming patterns where possible
--   Prefer composition over inheritance
--   Use descriptive variable and function names
--   Keep functions small and focused on single responsibility
+- Use TypeScript for all new code
+- Follow functional programming patterns where possible
+- Prefer composition over inheritance
+- Use descriptive variable and function names
+- Keep functions small and focused on single responsibility
 
 ## File Naming Conventions
 
--   **Components**: PascalCase (e.g., `DatabaseConnection.tsx`)
--   **Utilities**: Hyphen-separated (e.g., `format-query.ts`)
--   **Types**: PascalCase interfaces/types (e.g., `DatabaseConfig.ts`)
--   **Constants**: UPPER_SNAKE_CASE (e.g., `DATABASE_TYPES.ts`)
+- **Components**: PascalCase (e.g., `DatabaseConnection.tsx`)
+- **Utilities**: Hyphen-separated (e.g., `format-query.ts`)
+- **Types**: PascalCase interfaces/types (e.g., `DatabaseConfig.ts`)
+- **Constants**: UPPER_SNAKE_CASE (e.g., `DATABASE_TYPES.ts`)
 
 ## Import Organization
 
@@ -27,7 +27,7 @@ alwaysApply: true
 // 1. React and external libraries
 import React from "react";
 import { useState, useEffect } from "react";
-import { invoke } from "@tauri-apps/api";
+import { SomeMethod } from "../wailsjs/go/main/App";
 
 // 2. Internal utilities and hooks
 import { cn } from "@/lib/utils";
@@ -44,15 +44,15 @@ import type { Database, QueryResult } from "@/types/database";
 
 ## Component Patterns
 
--   Use functional components with hooks
--   Prefer named exports over default exports
--   Use TypeScript interfaces for props
--   Implement proper error boundaries
--   Use React.memo() for performance-critical components
+- Use functional components with hooks
+- Prefer named exports over default exports
+- Use TypeScript interfaces for props
+- Implement proper error boundaries
+- Use React.memo() for performance-critical components
 
 ## Documentation & References
 
--   Use Context7 MCP server for React and TypeScript documentation
--   Query Context7 with `/reactjs/react.dev` for React best practices and patterns
--   For TypeScript guidance, reference Context7 with specific TypeScript topics
--   Leverage Context7's code examples for modern React patterns and hooks
+- Use Context7 MCP server for React and TypeScript documentation
+- Query Context7 with `/reactjs/react.dev` for React best practices and patterns
+- For TypeScript guidance, reference Context7 with specific TypeScript topics
+- Leverage Context7's code examples for modern React patterns and hooks

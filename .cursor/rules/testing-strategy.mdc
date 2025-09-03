@@ -8,34 +8,34 @@ alwaysApply: true
 
 ## Unit Tests
 
--   Test utility functions and hooks
--   Mock Tauri APIs in tests
--   Use React Testing Library for component tests
--   Aim for high test coverage on critical paths
+- Test utility functions and hooks
+- Mock Wails APIs in tests
+- Use React Testing Library for component tests
+- Aim for high test coverage on critical paths
 
 ## Integration Tests
 
--   Test database connection flows
--   Verify query execution and result handling
--   Test error scenarios and edge cases
+- Test database connection flows
+- Verify query execution and result handling
+- Test error scenarios and edge cases
 
 ## Testing Tools
 
--   **React Testing Library**: For component testing
--   **Jest/Vitest**: Test runner
--   **MSW**: Mock Service Worker for API mocking
--   **Playwright**: End-to-end testing (if needed)
+- **React Testing Library**: For component testing
+- **Jest/Vitest**: Test runner
+- **MSW**: Mock Service Worker for API mocking
+- **Playwright**: End-to-end testing (if needed)
 
 ## Best Practices
 
--   Write tests before implementing features (TDD)
--   Test user interactions, not implementation details
--   Mock external dependencies appropriately
--   Use descriptive test names that explain the scenario
+- Write tests before implementing features (TDD)
+- Test user interactions, not implementation details
+- Mock external dependencies appropriately
+- Use descriptive test names that explain the scenario
 
 ## Documentation & Learning
 
--   Use Context7 MCP server for testing framework documentation and patterns
--   Query Context7 with React Testing Library for component testing best practices
--   Reference Context7 for Tauri testing patterns and mock strategies
--   Leverage Context7's examples for integration testing with databases
+- Use Context7 MCP server for testing framework documentation and patterns
+- Query Context7 with React Testing Library for component testing best practices
+- Reference Context7 for Wails testing patterns and mock strategies
+- Leverage Context7's examples for integration testing with databases

@@ -1,44 +1,45 @@
 ---
-description: Tauri-specific development guidelines and patterns
-globs: ["apps/desktop/**/*.rs", "apps/desktop/**/*.tsx", "apps/desktop/**/*.ts"]
+description: Wails-specific development guidelines and patterns
+globs: ["apps/desktop/**/*.go", "apps/desktop/**/*.tsx", "apps/desktop/**/*.ts"]
 alwaysApply: true
 ---
 
-# Tauri-Specific Guidelines
+# Wails-Specific Guidelines
 
-## Rust Commands
+## Go Backend Commands
 
--   Keep Rust commands focused and single-purpose
--   Use proper error handling with `Result<T, E>`
--   Implement async operations for database interactions
--   Use Tauri's state management for shared resources
+- Keep Go methods focused and single-purpose
+- Use proper error handling with Go's error interface
+- Implement async operations for database interactions
+- Use Wails context for shared resources and dependency injection
 
 ## Frontend-Backend Communication
 
--   Use Tauri's `invoke()` for calling Rust commands
--   Implement proper loading states for async operations
--   Handle errors gracefully with user-friendly messages
--   Use Tauri events for real-time updates
+- Use generated Wails bindings for calling Go methods
+- Import from `../wailsjs/go/main/App` for backend methods
+- Implement proper loading states for async operations
+- Handle errors gracefully with user-friendly messages
+- Use Wails runtime for system events and notifications
 
 ## Security
 
--   Never log sensitive database credentials
--   Use parameterized queries to prevent SQL injection
--   Implement connection timeout and retry logic
--   Encrypt stored connection configurations
--   Use Tauri's secure storage APIs
--   Validate all user inputs
+- Never log sensitive database credentials
+- Use parameterized queries to prevent SQL injection
+- Implement connection timeout and retry logic
+- Encrypt stored connection configurations
+- Use Wails secure storage and context APIs
+- Validate all user inputs
 
 ## Performance
 
--   Implement virtual scrolling for large result sets
--   Use React.memo and useMemo for expensive computations
--   Lazy load components and features
--   Optimize bundle size with dynamic imports
+- Implement virtual scrolling for large result sets
+- Use React.memo and useMemo for expensive computations
+- Lazy load components and features
+- Optimize bundle size with dynamic imports
 
 ## Documentation & Learning
 
--   Use Context7 MCP server for up-to-date Tauri documentation and examples
--   When implementing new Tauri features, query Context7 with: `/tauri-apps/tauri` library ID
--   For plugin development, reference Context7 docs with specific plugin topics
--   Leverage Context7's code snippets for Tauri command patterns and best practices
+- Use Context7 MCP server for up-to-date Wails documentation and examples
+- Reference Wails official documentation for Go backend patterns
+- For database integration, use Go's standard database/sql package
+- Leverage Wails runtime features for desktop integration

@@ -8,44 +8,44 @@ alwaysApply: true
 
 ## Connection Management
 
--   Support for multiple concurrent database connections
--   Connection pooling and lifecycle management
--   Secure credential storage using Tauri's secure storage
--   Connection testing and health monitoring
+- Support for multiple concurrent database connections
+- Connection pooling and lifecycle management
+- Secure credential storage using Wails secure storage
+- Connection testing and health monitoring
 
 ## Query Execution
 
--   Syntax highlighting for SQL queries
--   Query result pagination and virtualization
--   Export results in multiple formats (CSV, JSON, Excel)
--   Query history and favorites
+- Syntax highlighting for SQL queries
+- Query result pagination and virtualization
+- Export results in multiple formats (CSV, JSON, Excel)
+- Query history and favorites
 
 ## Security Best Practices
 
--   Never log sensitive database credentials
--   Use parameterized queries to prevent SQL injection
--   Implement connection timeout and retry logic
--   Encrypt stored connection configurations
--   Use TLS for database connections when available
--   Implement certificate validation
+- Never log sensitive database credentials
+- Use parameterized queries to prevent SQL injection
+- Implement connection timeout and retry logic
+- Encrypt stored connection configurations
+- Use TLS for database connections when available
+- Implement certificate validation
 
 ## Performance Optimization
 
--   Implement query result streaming for large datasets
--   Use connection pooling for better performance
--   Cache frequently accessed metadata
--   Implement query optimization suggestions
+- Implement query result streaming for large datasets
+- Use connection pooling for better performance
+- Cache frequently accessed metadata
+- Implement query optimization suggestions
 
 ## Error Handling
 
--   Catch and handle database connection errors
--   Provide meaningful error messages for SQL syntax errors
--   Implement retry logic for transient failures
--   Handle timeout scenarios gracefully
+- Catch and handle database connection errors
+- Provide meaningful error messages for SQL syntax errors
+- Implement retry logic for transient failures
+- Handle timeout scenarios gracefully
 
 ## Documentation & Learning
 
--   Use Context7 MCP server for database driver documentation and examples
--   Query Context7 with `/tauri-apps/tauri-plugin-sql` for Tauri SQL plugin patterns
--   Reference Context7 for connection pooling and transaction management examples
--   Leverage Context7's security best practices for database credential handling
+- Use Context7 MCP server for database driver documentation and examples
+- Reference Go's database/sql package for connection pooling and transaction patterns
+- Query Context7 for Go database driver examples and best practices
+- Leverage Context7's security best practices for database credential handling
