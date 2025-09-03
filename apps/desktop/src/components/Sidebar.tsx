@@ -1,6 +1,6 @@
-import { Plus, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { FolderOpen, Plus } from "lucide-react";
 import { ConnectionItem } from "./ConnectionItem";
 import { TableItem } from "./TableItem";
 
@@ -36,7 +36,7 @@ export function Sidebar({
     onTableSelect
 }: SidebarProps) {
     return (
-        <div className="w-64 border-r border-border bg-card flex flex-col">
+        <div className="border-border bg-card flex w-64 flex-col border-r">
             <ScrollArea className="flex-1">
                 <div className="p-2">
                     {connections.map((conn) => (
@@ -46,8 +46,8 @@ export function Sidebar({
                             isSelected={selectedConnection.id === conn.id}
                             onSelect={onConnectionSelect}
                         >
-                            <div className="ml-6 mt-1 space-y-1">
-                                <div className="flex items-center gap-2 p-1 text-xs text-muted-foreground">
+                            <div className="mt-1 ml-6 space-y-1">
+                                <div className="text-muted-foreground flex items-center gap-2 p-1 text-xs">
                                     <FolderOpen className="h-3 w-3" />
                                     <span>Tables ({tables.length})</span>
                                 </div>
@@ -65,9 +65,9 @@ export function Sidebar({
                 </div>
             </ScrollArea>
 
-            <div className="p-2 border-t border-border">
+            <div className="border-border border-t p-2">
                 <Button className="w-full" variant="secondary">
-                    <Plus className="h-4 w-4 mr-2" />
+                    <Plus className="mr-2 h-4 w-4" />
                     New Connection
                 </Button>
             </div>

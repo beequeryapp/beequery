@@ -15,7 +15,7 @@ interface TableItemProps {
 export function TableItem({ table, isSelected, onSelect }: TableItemProps) {
     return (
         <div
-            className={`flex items-center gap-2 p-1 pl-6 rounded text-xs cursor-pointer transition-colors ${
+            className={`flex cursor-pointer items-center gap-2 rounded p-1 pl-6 text-xs transition-colors ${
                 isSelected
                     ? "bg-accent/50 text-accent-foreground"
                     : "hover:bg-accent/20 text-muted-foreground"

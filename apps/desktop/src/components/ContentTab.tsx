@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
     ColumnDef,
     ColumnFiltersState,
@@ -11,7 +10,8 @@ import {
     useReactTable,
     VisibilityState
 } from "@tanstack/react-table";
-import { Search, ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronUp, Search } from "lucide-react";
+import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -62,7 +62,7 @@ function createColumnsFromData(data: Record<string, any>[]): ColumnDef<Record<st
                 <Button
                     variant="ghost"
                     onClick={handleSort}
-                    className="h-auto p-0 font-medium hover:bg-transparent flex items-center gap-1"
+                    className="flex h-auto items-center gap-1 p-0 font-medium hover:bg-transparent"
                 >
                     {key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, " ")}
                     {sortState === "asc" && <ChevronUp className="h-3 w-3" />}
@@ -81,7 +81,7 @@ function createColumnsFromData(data: Record<string, any>[]): ColumnDef<Record<st
             if (typeof value === "boolean") {
                 return (
                     <span
-                        className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${
+                        className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
                             value ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
                         }`}
                     >
@@ -97,7 +97,7 @@ function createColumnsFromData(data: Record<string, any>[]): ColumnDef<Record<st
             if (typeof value === "string") {
                 // Check if it looks like a date
                 if (value.match(/^\d{4}-\d{2}-\d{2}/) || value.match(/^\d{2}\/\d{2}\/\d{4}/)) {
-                    return <div className="font-mono text-muted-foreground">{value}</div>;
+                    return <div className="text-muted-foreground font-mono">{value}</div>;
                 }
 
                 // Check if it looks like an email
@@ -113,14 +113,14 @@ function createColumnsFromData(data: Record<string, any>[]): ColumnDef<Record<st
                 ) {
                     return (
                         <span
-                            className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${
+                            className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
                                 value.toLowerCase() === "active" ||
                                 value.toLowerCase() === "success"
                                     ? "bg-green-100 text-green-800"
                                     : value.toLowerCase() === "inactive" ||
-                                      value.toLowerCase() === "failed"
-                                    ? "bg-destructive/20 text-destructive"
-                                    : "bg-secondary text-secondary-foreground"
+                                        value.toLowerCase() === "failed"
+                                      ? "bg-destructive/20 text-destructive"
+                                      : "bg-secondary text-secondary-foreground"
                             }`}
                         >
                             {value}
@@ -176,27 +176,27 @@ export function ContentTab({ data }: ContentTabProps) {
     });
 
     return (
-        <div className="h-screen flex">
+        <div className="flex h-screen">
             {/* Main Content */}
             <div
                 className={`flex flex-col ${
                     selectedRowData ? "flex-1" : "w-full"
                 } transition-all duration-200`}
             >
-                <div className="border-b border-border p-2 bg-muted flex-shrink-0">
+                <div className="border-border bg-muted flex-shrink-0 border-b p-2">
                     <div className="flex items-center gap-2">
-                        <Search className="h-4 w-4 text-muted-foreground" />
+                        <Search className="text-muted-foreground h-4 w-4" />
                         <Input
                             placeholder="Search all columns..."
                             value={globalFilter ?? ""}
                             onChange={(event) => setGlobalFilter(event.target.value)}
-                            className="flex-1 h-7 text-xs border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                            className="h-7 flex-1 border-0 bg-transparent text-xs focus-visible:ring-0 focus-visible:ring-offset-0"
                         />
                     </div>
                 </div>
 
-                <div className="flex-1 overflow-auto min-h-0">
-                    <div className="rounded-md border">
+                <div className="min-h-0 flex-1 overflow-auto">
+                    <div className="border-border border-b">
                         <Table>
                             <TableHeader>
                                 {table.getHeaderGroups().map((headerGroup) => (
@@ -256,8 +256,8 @@ export function ContentTab({ data }: ContentTabProps) {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-end space-x-2 p-4 border-t border-border flex-shrink-0">
-                    <div className="flex-1 text-sm text-muted-foreground">
+                <div className="border-border flex flex-shrink-0 items-center justify-end space-x-2 border-t p-4">
+                    <div className="text-muted-foreground flex-1 text-sm">
                         {table.getFilteredSelectedRowModel().rows.length} of{" "}
                         {table.getFilteredRowModel().rows.length} row(s) total.
                     </div>
@@ -284,8 +284,8 @@ export function ContentTab({ data }: ContentTabProps) {
 
             {/* Right Sidebar */}
             {selectedRowData && (
-                <div className="w-80 border-l border-border bg-card flex flex-col h-full">
-                    <div className="p-4 border-b border-border flex-shrink-0">
+                <div className="border-border bg-card flex h-full w-80 flex-col border-l">
+                    <div className="border-border flex-shrink-0 border-b p-4">
                         <div className="flex items-center justify-between">
                             <h3 className="text-lg font-semibold">Row Details</h3>
                             <Button
@@ -297,19 +297,19 @@ export function ContentTab({ data }: ContentTabProps) {
                                 ×
                             </Button>
                         </div>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground mt-1 text-sm">
                             Detailed view of the selected row data
                         </p>
                     </div>
 
-                    <ScrollArea className="flex-1 p-4 min-h-0">
+                    <ScrollArea className="min-h-0 flex-1 p-4">
                         <div className="space-y-4">
                             {Object.entries(selectedRowData).map(([key, value]) => (
                                 <div
                                     key={key}
-                                    className="grid grid-cols-3 gap-4 py-2 border-b border-border last:border-b-0"
+                                    className="border-border grid grid-cols-3 gap-4 border-b py-2 last:border-b-0"
                                 >
-                                    <div className="font-medium text-sm text-muted-foreground">
+                                    <div className="text-muted-foreground text-sm font-medium">
                                         {key.charAt(0).toUpperCase() +
                                             key.slice(1).replace(/_/g, " ")}
                                     </div>
@@ -318,7 +318,7 @@ export function ContentTab({ data }: ContentTabProps) {
                                             <span className="text-muted-foreground italic">—</span>
                                         ) : typeof value === "boolean" ? (
                                             <span
-                                                className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${
+                                                className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
                                                     value
                                                         ? "bg-green-100 text-green-800"
                                                         : "bg-red-100 text-red-800"
@@ -340,14 +340,14 @@ export function ContentTab({ data }: ContentTabProps) {
                                               "processing"
                                           ].includes(value.toLowerCase()) ? (
                                             <span
-                                                className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${
+                                                className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
                                                     value.toLowerCase() === "active" ||
                                                     value.toLowerCase() === "success"
                                                         ? "bg-green-100 text-green-800"
                                                         : value.toLowerCase() === "inactive" ||
-                                                          value.toLowerCase() === "failed"
-                                                        ? "bg-destructive/20 text-destructive"
-                                                        : "bg-secondary text-secondary-foreground"
+                                                            value.toLowerCase() === "failed"
+                                                          ? "bg-destructive/20 text-destructive"
+                                                          : "bg-secondary text-secondary-foreground"
                                                 }`}
                                             >
                                                 {value}
@@ -359,10 +359,10 @@ export function ContentTab({ data }: ContentTabProps) {
                                                     value.match(/^\d{4}-\d{2}-\d{2}/)
                                                         ? "font-mono"
                                                         : typeof value === "string" &&
-                                                          value.includes("@") &&
-                                                          value.includes(".")
-                                                        ? "text-muted-foreground"
-                                                        : ""
+                                                            value.includes("@") &&
+                                                            value.includes(".")
+                                                          ? "text-muted-foreground"
+                                                          : ""
                                                 }
                                             >
                                                 {String(value)}

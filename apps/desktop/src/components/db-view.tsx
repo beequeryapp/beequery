@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Sidebar } from "./Sidebar";
 import { MainContent } from "./MainContent";
+import { Sidebar } from "./Sidebar";
 
 // Mock data for demonstration
 const mockConnections = [
@@ -69,7 +69,7 @@ export function DatabaseViewer() {
     const [query, setQuery] = useState("SELECT * FROM users LIMIT 100;");
 
     return (
-        <div className="flex h-screen bg-background">
+        <div className="bg-background flex h-screen">
             <Sidebar
                 connections={mockConnections}
                 tables={mockTables}

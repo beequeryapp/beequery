@@ -24,7 +24,7 @@ export function ConnectionItem({
     return (
         <div className="mb-1">
             <div
-                className={`flex items-center gap-2 p-2 rounded text-sm cursor-pointer transition-colors ${
+                className={`flex cursor-pointer items-center gap-2 rounded p-2 text-sm transition-colors ${
                     isSelected
                         ? "bg-accent text-accent-foreground"
                         : "hover:bg-accent/50 text-card-foreground"
@@ -32,13 +32,13 @@ export function ConnectionItem({
                 onClick={() => onSelect(connection)}
             >
                 <ChevronDown className="h-3 w-3" />
-                <Server className="h-4 w-4 text-muted-foreground" />
-                <div className="flex-1 min-w-0">
-                    <div className="font-medium truncate">{connection.name}</div>
-                    <div className="text-xs text-muted-foreground truncate">{connection.host}</div>
+                <Server className="text-muted-foreground h-4 w-4" />
+                <div className="min-w-0 flex-1">
+                    <div className="truncate font-medium">{connection.name}</div>
+                    <div className="text-muted-foreground truncate text-xs">{connection.host}</div>
                 </div>
                 <div
-                    className={`w-2 h-2 rounded-full ${
+                    className={`h-2 w-2 rounded-full ${
                         connection.status === "connected" ? "bg-green-500" : "bg-destructive"
                     }`}
                 />
