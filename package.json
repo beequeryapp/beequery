@@ -10,16 +10,16 @@
         "react-dom": "19.1.0"
     },
     "scripts": {
-        "dev:desktop": "cd apps/desktop && bun run dev",
-        "build:desktop": "cd apps/desktop && bun run build",
-        "tauri": "cd apps/desktop && bun run tauri",
+        "dev:desktop": "cd apps/desktop && wails dev",
+        "build:desktop": "cd apps/desktop && wails build",
+        "wails": "cd apps/desktop && wails",
         "dev:website": "cd apps/website && bun run dev",
         "build:website": "cd apps/website && bun run build",
         "dev": "concurrently \"bun run dev:desktop\" \"bun run dev:website\"",
         "build": "bun run build:desktop && bun run build:website",
-        "install:all": "bun install && cd apps/desktop && bun install && cd ../website && bun install",
+        "install:all": "bun install && cd apps/desktop && wails install && cd ../website && bun install && cd ../desktop/frontend && bun install",
         "ui:add:web": "cd apps/website && bun run ui:add",
-        "ui:add:desk": "cd apps/desktop && bun run ui:add"
+        "ui:add:desk": "cd apps/desktop/frontend && bun run ui:add"
     },
     "devDependencies": {
         "concurrently": "^9.0.2",
